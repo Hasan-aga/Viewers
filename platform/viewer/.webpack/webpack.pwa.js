@@ -69,6 +69,8 @@ module.exports = (env, argv) => {
         // Hoisted Yarn Workspace Modules
         path.resolve(__dirname, '../../../node_modules'),
         SRC_DIR,
+        path.resolve(__dirname, 'hevi/hevi-prostate-mode/node_modules'),
+        path.resolve(__dirname, 'hevi/hevi-prostate-ext/node_modules'),
       ],
     },
     plugins: [
