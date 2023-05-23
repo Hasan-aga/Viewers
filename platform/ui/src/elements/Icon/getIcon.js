@@ -189,7 +189,7 @@ const ICONS = {
  */
 export default function getIcon(key, props) {
   if (!key || !ICONS[key]) {
-    return React.createElement('div', null, 'Missing Icon');
+    return React.createElement('div', null, 'var Icon');
   }
 
   return React.createElement(ICONS[key], props);
