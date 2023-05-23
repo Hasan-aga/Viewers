@@ -6,7 +6,7 @@ import React from 'react';
 function OHIFLogo() {
   return (
     <a rel="noopener noreferrer" className="header-brand" href="/">
-      <Icon name="ohif-logo" className="header-logo-image" />
+      {/* <Icon name="ohif-logo" className="header-logo-image" /> */}
       {/* Logo text would fit smaller displays at two lines:
        *
        * Open Health
@@ -14,7 +14,7 @@ function OHIFLogo() {
        *
        * Or as `OHIF` on really small displays
        */}
-      <Icon name="hProstate" className="header-logo-text" />
+      <Icon name="ohif-logo" className="header-logo-text" />
     </a>
   );
 }
