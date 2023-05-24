@@ -15,10 +15,10 @@ setAutoFreeze(false);
 
 export const DEFAULT_STATE = {
   numRows: 1,
-  numColumns: 1,
+  numColumns: 2,
   activeViewportIndex: 0,
   layout: {
-    viewports: [{}],
+    viewports: [{}, {}],
   },
   viewportSpecificData: {},
 };
