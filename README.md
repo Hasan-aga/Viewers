@@ -1,8 +1,10 @@
 # Getting started
 
-to start the viewer we currently need node v16.20.0 (v18 is not working). we run
-`yarn start` to start the viewer with the default config (test data comming from
-https://server.dcmjs.org)
+to start the viewer we currently need node v16.20.0 (v18 is not working). a
+simple way to switch between node versions is using `nvm use v16.20.0`.
+
+we run `yarn start` to start the viewer with the default config (test data
+comming from https://server.dcmjs.org)
 
 ## using a local Pacs (Orthanc) for development
 
@@ -20,3 +22,8 @@ to run a development server with a local orthanc instance we do the following:
 
 `yarn build` will generate a `dist/` folder inside
 `Viewers/platform/viewer/dist`
+
+## building a container
+
+we navigate to `platform/viewer/.recipes` where we can find multiple
+docker-compose configs.
