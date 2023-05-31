@@ -1,5 +1,7 @@
 # Getting started
 
+make sure you have docker on your machine and that it is running.
+
 to start the viewer we currently need node v16.20.0 (v18 is not working). a
 simple way to switch between node versions is using `nvm use v16.20.0`.
 
@@ -27,3 +29,6 @@ to run a development server with a local orthanc instance we do the following:
 
 we navigate to `platform/viewer/.recipes` where we can find multiple
 docker-compose configs.
+
+we use `docker-compose up --build` to build the recipe. the build flag means we
+always build from scratch instead of using cache.
