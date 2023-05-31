@@ -27,6 +27,10 @@ to run a development server with a local orthanc instance we do the following:
 
 ## building a container
 
+we start with `yarn build` to produce an up-to-date `dist/` directory. note that
+most recipes will copy the entire project and rebuild it but our recipe does not
+do that as it is faster to simply copy `dist/`.
+
 we navigate to `platform/viewer/.recipes` where we can find multiple
 docker-compose configs.
 
