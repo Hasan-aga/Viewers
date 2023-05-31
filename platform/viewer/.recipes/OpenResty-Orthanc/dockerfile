@@ -25,7 +25,7 @@
 # Stage 1: Build the application
 
 # Needs to be pinned at 16.x for now because of https://github.com/webpack/webpack/issues/14532
-FROM node:lts-slim as builder
+FROM node:16.20.0 as builder
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
