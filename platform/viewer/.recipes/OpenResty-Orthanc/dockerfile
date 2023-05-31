@@ -30,15 +30,16 @@ FROM node:16.20.0 as builder
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
-ENV APP_CONFIG=config/docker_openresty-orthanc.js
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+# ENV APP_CONFIG=config/docker_openresty-orthanc.js
+# ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
-COPY package.json /usr/src/app/package.json
-COPY yarn.lock /usr/src/app/yarn.lock
+# COPY package.json /usr/src/app/package.json
+# COPY yarn.lock /usr/src/app/yarn.lock
+COPY platform/viewer/dist /usr/src/app/platform/viewer/dist
 
-ADD . /usr/src/app/
-RUN yarn install
-RUN yarn run build
+# ADD . /usr/src/app/
+# RUN yarn install
+# RUN yarn run build
 
 # Stage 2: Bundle the built application into a Docker container
 # which runs openresty (nginx) using Alpine Linux
@@ -59,7 +60,7 @@ RUN luarocks install lua-resty-session
 RUN luarocks install lua-resty-http
 # !!!
 RUN luarocks install lua-resty-openidc
-RUN luarocks install luacrypto
+RUN luarocks install luaossl
 
 # Copy build output to image
 COPY --from=builder /usr/src/app/platform/viewer/dist /var/www/html
