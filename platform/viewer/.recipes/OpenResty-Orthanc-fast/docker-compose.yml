@@ -14,7 +14,7 @@ services:
       # Relative to context
       dockerfile: ./platform/viewer/.recipes/OpenResty-Orthanc-fast/dockerfile
     image: webapp:latest
-    container_name: webapp
+    container_name: webapp_fast
     volumes:
       # Nginx config
       - ./config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
