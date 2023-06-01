@@ -77,3 +77,9 @@ window.config = {
 
 note how we use relative links instead of specifying an IP address or a domain
 (or localhost).
+
+## general notes for development
+
+editing nginx.conf of the dockerfile will not take effect entirely unless we
+perform a restart of the development machine. there may be an easier way but as
+of this writing I have no other alternative than a full restart.
