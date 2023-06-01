@@ -37,5 +37,7 @@ screenshots/
 
 # Locize settings
 .locize
-platform/viewer/.recipes/OpenResty-Orthanc/logs/nginx/mydomain.access.log
-platform/viewer/.recipes/OpenResty-Orthanc/logs/nginx/mydomain.error.log
+
+# ignore ohif-orthanc logs
+platform/viewer/.recipes/OpenResty-Orthanc/logs/*
+platform/viewer/.recipes/OpenResty-Orthanc-fast/logs/*

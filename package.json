@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start-ohif-orthanc": "yarn build && cd platform/viewer/.recipes/OpenResty-Orthanc/ && docker-compose up --build",
+    "start-ohif-fast": "yarn build && cd platform/viewer/.recipes/OpenResty-Orthanc-fast/ && docker-compose up --build",
     "cm": "npx git-cz",
     "build": "lerna run build:viewer --stream",
     "build:lt": "lerna run build:viewer:lesion-tracker --stream",
