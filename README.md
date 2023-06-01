@@ -22,6 +22,9 @@ to run a development server with a local orthanc instance we do the following:
 
 # building
 
+we have an npm script called `start-ohif-orthanc` that we can use to do the
+following:
+
 `yarn build` will generate a `dist/` folder inside
 `Viewers/platform/viewer/dist`
 
