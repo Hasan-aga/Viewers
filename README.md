@@ -39,3 +39,41 @@ docker-compose configs.
 
 we use `docker-compose up --build` to build the recipe. the build flag means we
 always build from scratch instead of using cache.
+
+## deployment
+
+we must configure ohif so it connects to our orthanc on the deployment machine.
+this is possible by editing the default config or by writing our own config
+files and specifying them in APP_CONFIG env variable.
+
+example working config:
+
+```
+window.config = {
+  routerBasename: '/',
+  showStudyList: true,
+  servers: {
+    dicomWeb: [
+      {
+        name: 'Orthanc',
+        wadoUriRoot: '/pacs/wado',
+        qidoRoot: '/pacs/dicom-web',
+        wadoRoot: '/pacs/dicom-web',
+        qidoSupportsIncludeField: false,
+        imageRendering: 'wadors',
+        thumbnailRendering: 'wadors',
+        enableStudyLazyLoad: true,
+        supportsFuzzyMatching: true,
+        // requestOptions: {
+        // undefined to use JWT + Bearer auth
+        // auth: 'orthanc:orthanc',
+        // },
+      },
+    ],
+  },
+};
+
+```
+
+note how we use relative links instead of specifying an IP address or a domain
+(or localhost).
