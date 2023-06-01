@@ -75,8 +75,8 @@ window.config = {
 
 ```
 
-note how we use relative links instead of specifying an IP address or a domain
-(or localhost).
+**_note how we use relative links instead of specifying an IP address or a
+domain (or localhost)._**
 
 ## general notes for development
 
