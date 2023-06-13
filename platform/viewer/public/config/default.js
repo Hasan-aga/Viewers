@@ -1,3 +1,4 @@
+console.log('loaded default config');
 window.config = {
   routerBasename: '/',
   // whiteLabeling: {},

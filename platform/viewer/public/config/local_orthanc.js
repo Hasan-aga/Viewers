@@ -1,3 +1,4 @@
+console.log('loaded local_orthanc config');
 window.config = {
   routerBasename: '/',
   extensions: [],
