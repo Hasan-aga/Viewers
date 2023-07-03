@@ -23,12 +23,13 @@
 
 
 # Stage 1: Build the application
-FROM node:12.22.1-slim as builder
+FROM node:16.20.0 as builder
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy Files
+COPY preinstall.js /usr/src/app/
 COPY .docker /usr/src/app/.docker
 COPY .webpack /usr/src/app/.webpack
 COPY extensions /usr/src/app/extensions
