@@ -1,5 +1,5 @@
-import hpMNGrid from './hpMNGrid';
 import hpMNCompare from './hpCompare';
+import hpMNGrid from './hpMNGrid';
 
 const defaultProtocol = {
   id: 'default',
@@ -67,28 +67,29 @@ const defaultProtocol = {
         layoutType: 'grid',
         properties: {
           rows: 1,
-          columns: 1,
+          columns: 2,
         },
       },
       viewports: [
         {
           viewportOptions: {
-            viewportType: 'stack',
-            viewportId: 'default',
             toolGroupId: 'default',
-            // This will specify the initial image options index if it matches in the URL
-            // and will otherwise not specify anything.
-            initialImageOptions: {
-              custom: 'sopInstanceLocation',
-            },
-            // Other options for initialImageOptions, which can be included in the default
-            // custom attribute, or can be provided directly.
-            //   index: 180,
-            //   preset: 'middle', // 'first', 'last', 'middle'
-            // },
+            allowUnmatchedView: true,
           },
           displaySets: [
             {
+              id: 'defaultDisplaySetId',
+            },
+          ],
+        },
+        {
+          viewportOptions: {
+            toolGroupId: 'default',
+            allowUnmatchedView: true,
+          },
+          displaySets: [
+            {
+              matchedDisplaySetsIndex: 1,
               id: 'defaultDisplaySetId',
             },
           ],
