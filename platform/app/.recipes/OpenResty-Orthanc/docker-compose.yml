@@ -14,7 +14,7 @@ services:
       # Relative to context
       dockerfile: ./platform/app/.recipes/OpenResty-Orthanc/dockerfile
     image: webapp:latest
-    container_name: webapp
+    container_name: ohif-webapp
     volumes:
       # Nginx config
       - ./config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
