@@ -59,7 +59,18 @@ const defaultProtocol = {
       // Can be used to select matching studies
       // studyMatchingRules: [],
     },
+    report: {
+      seriesMatchingRules: [
+        {
+          attribute: 'SeriesDescription',
+          constraint: {
+            contains: 'summary',
+          },
+        },
+      ],
+    },
   },
+
   stages: [
     {
       name: 'default',
@@ -90,7 +101,7 @@ const defaultProtocol = {
           displaySets: [
             {
               matchedDisplaySetsIndex: 1,
-              id: 'defaultDisplaySetId',
+              id: 'report',
             },
           ],
         },
