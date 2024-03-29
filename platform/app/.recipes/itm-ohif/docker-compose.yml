@@ -8,7 +8,7 @@ services:
   # Exposed server that's handling incoming web requests
   # Underlying image: openresty/openresty:alpine-fat
   ohif_viewer:
-    image: repo.hevi.ai/repository/hevidocker/demo.suite.ohif:3.0.0
+    image: repo.hevi.ai/repository/hevidocker/itm.ohif:3.0.0
     container_name: ohif-webapp
     volumes:
       # Nginx config
