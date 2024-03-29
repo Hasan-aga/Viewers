@@ -28,11 +28,14 @@ FROM node:18.16.1-slim as builder
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
+
 # Copy all files from the root of the OHIF source and note
 # that the Docker ignore file at the root (i.e. ./dockerignore) will filter
 # out files and directories that are not needed.
 COPY ./ /usr/src/app/
 
+ENV APP_CONFIG=config/itm-ohif.js
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 # For arm builds since parcel doesn't have prebuilt binaries for arm yet
 RUN apt-get update && apt-get install -y build-essential python3
 
@@ -41,8 +44,7 @@ RUN apt-get update && apt-get install -y build-essential python3
 RUN yarn config set workspaces-experimental true
 RUN yarn install
 
-ENV APP_CONFIG=config/docker_openresty-orthanc.js
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+
 
 ENV QUICK_BUILD true
 RUN yarn run build

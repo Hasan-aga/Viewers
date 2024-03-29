@@ -8,8 +8,13 @@ services:
   # Exposed server that's handling incoming web requests
   # Underlying image: openresty/openresty:alpine-fat
   ohif_viewer:
+    build:
+      # Project root
+      context: ./../../../../
+      # Relative to context
+      dockerfile: ./platform/app/.recipes/itm-ohif/dockerfile
     image: repo.hevi.ai/repository/hevidocker/itm.ohif:3.0.0
-    container_name: ohif-webapp
+    container_name: itm-ohif
     volumes:
       # Nginx config
       - ./config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
@@ -21,20 +26,4 @@ services:
     ports:
       - '443:443' # SSL
       - '3001:80' # Web
-    depends_on:
-      - orthanc
     restart: on-failure
-
-  # LINK: https://hub.docker.com/r/jodogne/orthanc-plugins/
-  # TODO: Update to use Postgres
-  # https://github.com/mrts/docker-postgresql-multiple-databases
-  orthanc:
-    image: jodogne/orthanc-plugins
-    hostname: orthanc
-    container_name: orthanc
-    volumes:
-      # Config
-      - ./config/orthanc.json:/etc/orthanc/orthanc.json:ro
-      # Persist data
-      - ./volumes/orthanc-db/:/var/lib/orthanc/db/
-    restart: unless-stopped
