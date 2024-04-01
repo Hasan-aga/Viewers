@@ -45,5 +45,5 @@ platform/app/.recipes/OpenResty-Orthanc/logs/*
 .vercel
 
 .vs
-platform/app/.recipes/hevi-demo/logs/nginx/*.log
-platform/app/.recipes/hevi-demo/logs/nginx/*.log
+platform/app/.recipes/hevi-v3-demo/logs/*
+platform/app/.recipes/hevi-v3-demo/volumes/*
