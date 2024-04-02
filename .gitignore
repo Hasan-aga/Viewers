@@ -47,3 +47,4 @@ platform/app/.recipes/OpenResty-Orthanc/logs/*
 .vs
 platform/app/.recipes/hevi-v3-demo/logs/*
 platform/app/.recipes/hevi-v3-demo/volumes/*
+platform/app/.recipes/itm-ohif/logs/nginx/*
