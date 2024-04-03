@@ -25,5 +25,5 @@ services:
       # - letsencrypt_challenges:/var/www/letsencrypt
     ports:
       - '443:443' # SSL
-      - '3001:80' # Web
+      - '3009:80' # Web
     restart: on-failure
