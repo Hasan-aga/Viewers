@@ -36,6 +36,8 @@ services:
     image: repo.hevi.ai/repository/hevidocker/jodogne/orthanc-plugins:1.12.3
     hostname: orthanc
     container_name: orthanc
+    ports:
+      - '4343:4242'
     volumes:
       # Config
       - ./config/orthanc.json:/etc/orthanc/orthanc.json:ro
