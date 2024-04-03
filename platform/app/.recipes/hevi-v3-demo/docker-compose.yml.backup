@@ -8,12 +8,8 @@ services:
   # Exposed server that's handling incoming web requests
   # Underlying image: openresty/openresty:alpine-fat
   ohif_viewer:
-    build:
-      # Project root
-      context: ./../../../../
-      # Relative to context
-      dockerfile: ./platform/app/.recipes/hevi-v3-demo/dockerfile
     image: repo.hevi.ai/repository/hevidocker/demo.suite.ohif:3.0.1
+    container_name: ohif-webapp
     volumes:
       # Nginx config
       - ./config/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
